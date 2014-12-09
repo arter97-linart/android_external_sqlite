@@ -1,6 +1,6 @@
 diff -r -u -d orig/shell.c ./shell.c
---- orig/shell.c	2014-12-06 22:51:05.000000000 +0900
-+++ ./shell.c	2014-12-09 17:14:38.176911897 +0900
+--- orig/shell.c	2014-12-15 17:04:38.459608642 +0900
++++ ./shell.c	2014-12-15 17:04:57.877607700 +0900
 @@ -38,6 +38,11 @@
  #endif
  #include <ctype.h>
@@ -36,8 +36,8 @@ diff -r -u -d orig/shell.c ./shell.c
  }
  
 diff -r -u -d orig/sqlite3.c ./sqlite3.c
---- orig/sqlite3.c	2014-12-06 22:51:05.000000000 +0900
-+++ ./sqlite3.c	2014-12-09 17:14:38.188905897 +0900
+--- orig/sqlite3.c	2014-12-15 17:04:38.495608640 +0900
++++ ./sqlite3.c	2014-12-15 17:04:57.889607699 +0900
 @@ -25,6 +25,13 @@
  #ifndef SQLITE_API
  # define SQLITE_API
@@ -218,7 +218,7 @@ diff -r -u -d orig/sqlite3.c ./sqlite3.c
    sqlite3_mutex_enter(db->mutex);
  
    /* Force xDisconnect calls on all virtual tables */
-@@ -127477,6 +127531,11 @@
+@@ -127479,6 +127533,11 @@
      }
    }
    sqlite3_mutex_enter(db->mutex);
@@ -230,7 +230,7 @@ diff -r -u -d orig/sqlite3.c ./sqlite3.c
    db->errMask = 0xff;
    db->nDb = 2;
    db->magic = SQLITE_MAGIC_BUSY;
-@@ -127599,9 +127658,9 @@
+@@ -127603,9 +127662,9 @@
  #endif
  
  #ifdef SQLITE_ENABLE_FTS3
@@ -243,7 +243,7 @@ diff -r -u -d orig/sqlite3.c ./sqlite3.c
  #endif
  
  #ifdef SQLITE_ENABLE_ICU
-@@ -127647,6 +127706,14 @@
+@@ -127651,6 +127710,14 @@
      db = 0;
    }else if( rc!=SQLITE_OK ){
      db->magic = SQLITE_MAGIC_SICK;
@@ -258,7 +258,7 @@ diff -r -u -d orig/sqlite3.c ./sqlite3.c
    }
    *ppDb = db;
  #ifdef SQLITE_ENABLE_SQLLOG
-@@ -133480,16 +133547,28 @@
+@@ -133484,16 +133551,28 @@
    ** module with sqlite.
    */
    if( SQLITE_OK==rc 
